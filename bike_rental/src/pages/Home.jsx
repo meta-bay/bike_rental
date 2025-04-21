@@ -40,11 +40,11 @@ const Home = () => {
   return (
     <div className="container mx-auto p-8 min-h-screen">
       <h1 className="text-4xl font-bold text-blue-800 mb-8 text-center">Available Bikes</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {bikes.map((bike) => (
-          <BikeCard key={bike.id} bike={bike} onBook={handleBook} />
-        ))}
-      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+  {bikes.map((bike) => (
+    <BikeCard key={bike.id} bike={bike} onBook={handleBook} />
+  ))}
+</div>
       {selectedBike && <BookingForm bike={selectedBike} onClose={handleClose} />}
     </div>
   );
