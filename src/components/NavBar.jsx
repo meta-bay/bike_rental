@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/bikerental.jpg'; // Import the logo
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,11 +13,12 @@ const Navbar = () => {
     <nav className="bg-gradient-to-r from-gray-900 to-gray-700 p-4 sm:p-6 text-white shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-3xl font-extrabold tracking-tight">
-          <Link to="/" className="hover:text-yellow-400 transition-colors duration-300">
+        <Link to="/" className="flex items-center space-x-3">
+          <img src={logo} alt="Bike Rental Logo" className="h-10 w-10 rounded-full" />
+          <h1 className="text-3xl font-extrabold tracking-tight">
             Bike<span className="text-yellow-400">Rental</span>
-          </Link>
-        </h1>
+          </h1>
+        </Link>
 
         {/* Hamburger Menu (Mobile) */}
         <button
@@ -47,10 +49,26 @@ const Navbar = () => {
         >
           <li>
             <Link
+              to="/home"
+              className="hover:text-yellow-400 transition-colors duration-300"
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/bookings"
               className="hover:text-yellow-400 transition-colors duration-300"
             >
               Bookings
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="hover:text-yellow-400 transition-colors duration-300"
+            >
+              About Us
             </Link>
           </li>
         </ul>
